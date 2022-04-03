@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
@@ -15,6 +16,7 @@ class _DashboardState extends State<Dashboard> {
     var size = MediaQuery.of(context).size;
     var TextBody = TextStyle(fontFamily: 'Open Sans M', fontSize: 15, color: Color.fromRGBO(102, 85, 95, 1));
     var TextAmount = TextStyle(fontFamily: 'Open Sans EB', fontSize: 25, color: Color.fromRGBO(102, 85, 95, 1));
+    var TextCardBody = TextStyle(fontFamily: 'Open Sans M', fontSize: 10, color: Color.fromRGBO(102, 85, 95, 1));
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -80,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
                     height: 128,
                     width: size.width,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 245, 224, 181),
+                      color: Color.fromRGBO(245, 224, 181, 1),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       boxShadow: [
                         BoxShadow(
@@ -98,25 +100,100 @@ class _DashboardState extends State<Dashboard> {
                         Text('Rs. 10,000', style: TextAmount)
                       ],
                     ),
-                  )
+                  ),
+
+                  Container(
+                    height: 96,
+                    // margin: EdgeInsets.only(bottom: 10),
+                    color: Colors.transparent,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('EXPENSES', style: TextAmount),
+                      ],
+                    )
+                  ),
                     
-                  // Expanded(
-                  //   child: GridView.count(
-                  //   mainAxisSpacing: 10,
-                  //   crossAxisSpacing: 10,
-                  //   primary: false,
-                  //   crossAxisCount: 1,
-                  //   children: <Widget>[
-                  //     Card(
-                  //       child: Column(
-                  //         children: <Widget>[
-                  //           Text('TOTAL BALANCE', style: TextStyle(fontFamily: 'Open Sans L', color: Colors.white, fontSize: 20),)
-                  //         ],
-                  //       )
-                  //     ),
-                  //   ],
-                  // )
-                  // )
+                  Expanded(
+                    child: GridView.count(
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      primary: false,
+                      crossAxisCount: 2,
+                      children: <Widget>[
+                        Card(
+                          elevation: 4,
+                          // color: Color.fromRGBO(245, 224, 181, 1),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Groceries', style: TextCardBody,),
+                              Text('Rs. 3000', style: TextAmount,),
+                              Container(
+                                height: 5,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(102, 85, 95, 1),
+                                ),
+                              )
+                            ],
+                          )
+                        ),
+                        Card(
+                          elevation: 4,
+                          // color: Color.fromRGBO(245, 224, 181, 1),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Clothes', style: TextCardBody,),
+                              Text('Rs. 2000', style: TextAmount,),
+                              Container(
+                                height: 5,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(102, 85, 95, 1),
+                                ),
+                              )
+                            ],
+                          )
+                        ),Card(
+                          elevation: 4,
+                          // color: Color.fromRGBO(245, 224, 181, 1),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Entertainment', style: TextCardBody,),
+                              Text('Rs. 2500', style: TextAmount,),
+                              Container(
+                                height: 5,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(102, 85, 95, 1),
+                                ),
+                              )
+                            ],
+                          )
+                        ),Card(
+                          elevation: 4,
+                          // color: Color.fromRGBO(245, 224, 181, 1),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('Gifts', style: TextCardBody,),
+                              Text('Rs. 2500', style: TextAmount,),
+                              Container(
+                                height: 5,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(102, 85, 95, 1),
+                                ),
+                              )
+                            ],
+                          )
+                        ),
+                      ],
+                    )
+                  )
                 ],
               )
             )

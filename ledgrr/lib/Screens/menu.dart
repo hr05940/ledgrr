@@ -52,14 +52,14 @@ class MainDrawer extends StatelessWidget{
                   buildMenuItem(
                     text: 'Savings',
                     icon: Icons.attach_money,
-                    onClicked: () => selectedItem(context, 3),
+                    onClicked: () => selectedItem(context, 4),
                   ),
                   const SizedBox(height: 260),
                   const Divider(color: Colors.white70),
                   buildMenuItem(
                     text: 'Sign Out',
                     icon: Icons.logout,
-                    onClicked: () => selectedItem(context, 4),
+                    onClicked: () => selectedItem(context, 5),
                   ),
                 ],
               ),

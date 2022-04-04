@@ -24,14 +24,14 @@ class Background extends StatelessWidget {
           //     width: size.width * 0.3,
           //   ),
           // ),
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   child: Image.asset(
-          //     "",
-          //     width: size.width * 0.2,
-          //   ),
-          // ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Image.asset(
+              "assets/icons/log.png",
+              width: size.width * 0.37,
+            ),
+          ),
           child,
         ],
       ),

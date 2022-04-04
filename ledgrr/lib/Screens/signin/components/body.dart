@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ledgrr/Screens/login/login.dart';
 import 'package:ledgrr/Screens/signin/components/background.dart';
+import 'package:ledgrr/Screens/signin/components/or_divider.dart';
+import 'package:ledgrr/Screens/signin/components/social_icon.dart';
 import 'package:ledgrr/components/AccountCheck.dart';
 import 'package:ledgrr/components/roundbutton.dart';
 import 'package:ledgrr/components/roundinputfield.dart';
@@ -12,12 +14,16 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
           Text(
             "SignUp",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Open Sans M',
+                fontSize: 25,
+                color: Color.fromRGBO(102, 85, 95, 1)),
           ),
           SvgPicture.asset(
             "assets/icons/login.svg",
@@ -59,6 +65,26 @@ class Body extends StatelessWidget {
               // );
             },
           ),
-        ]));
+          OrDivider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SocalIcon(
+                iconSrc: "assets/icons/facebook.svg",
+                press: () {},
+              ),
+              SocalIcon(
+                iconSrc: "assets/icons/twitter.svg",
+                press: () {},
+              ),
+              SocalIcon(
+                iconSrc: "assets/icons/google-plus.svg",
+                press: () {},
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
+import 'package:ledgrr/Screens/menu.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
 
@@ -19,6 +19,11 @@ class _DashboardState extends State<Dashboard> {
     var TextCardBody = TextStyle(fontFamily: 'Open Sans M', fontSize: 10, color: Color.fromRGBO(102, 85, 95, 1));
 
     return Scaffold(
+      appBar: AppBar(
+      backgroundColor: Color.fromRGBO(102, 85, 95, 1),
+      centerTitle: true,
+      title: Text('Welcome')),  
+      drawer: MainDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //code to execute on button press
@@ -66,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        IconButton(icon: Icon(Icons.menu), color: Colors.white, onPressed: () {},),
+                        // IconButton(icon: Icon(Icons.menu), color: Colors.white, onPressed: () {},),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[

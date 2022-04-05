@@ -40,20 +40,28 @@ class Body extends StatelessWidget {
             onChanged: (value) {},
           ),
           SizedBox(height: size.height * 0.05),
-          RoundedButton(
-            text: "LOGIN",
-            press: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Dashboard()));
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return Dashboard();
-              //     },
-              //   ),
-              // );
-            },
+          ElevatedButton(
+            child: Text("LOGIN"),
+            style: ElevatedButton.styleFrom(shape: StadiumBorder(),
+            primary: kPrimaryColor),
+            onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Dashboard()),
+            );
+          },
+            // press: () {
+            //   Navigator.of(context).push(
+            //       MaterialPageRoute(builder: (context) => const Dashboard()));
+            //   // Navigator.push(
+            //   //   context,
+            //   //   MaterialPageRoute(
+            //   //     builder: (context) {
+            //   //       return Dashboard();
+            //   //     },
+            //   //   ),
+            //   // );
+            // },
           ),
           SizedBox(height: size.height * 0.03),
           Row(

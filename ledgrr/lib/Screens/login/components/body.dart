@@ -63,16 +63,19 @@ class Body extends StatelessWidget {
             //   // );
             // },
           ),
-          // SizedBox(height: size.height * 0.03),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     Text("Forgot Password?"),
-          //     GestureDetector(
-          //       onTap: () {},
-          //     )
-          //   ],
-          // ),
+          SizedBox(height: size.height * 0.03),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Forgot Password?",
+                style: TextStyle(color: kPrimaryColor),
+              ),
+              // GestureDetector(
+              //   onTap: () {},
+              // )
+            ],
+          ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
             press: () {

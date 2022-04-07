@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ledgrr/Screens/menu.dart';
+import 'package:ledgrr/Screens/appbar.dart';
+
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
 
@@ -19,10 +21,10 @@ class _DashboardState extends State<Dashboard> {
     var TextCardBody = TextStyle(fontFamily: 'Open Sans M', fontSize: 10, color: Color.fromRGBO(102, 85, 95, 1));
 
     return Scaffold(
-      appBar: AppBar(
-      backgroundColor: Color.fromRGBO(102, 85, 95, 1),
-      centerTitle: true,
-      title: Text('Welcome')),  
+      appBar: BaseAppBar(
+        title: Text('Home'),
+        appBar: AppBar(),
+        ),
       drawer: MainDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

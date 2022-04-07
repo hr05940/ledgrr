@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ledgrr/Screens/menu.dart';
+import 'package:ledgrr/Screens/appbar.dart';
+
 class LoansPage extends StatefulWidget {
   const LoansPage({ Key? key }) : super(key: key);
 
@@ -15,10 +17,10 @@ class _LoansState extends State<LoansPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-      backgroundColor: Color.fromRGBO(102, 85, 95, 1),
-      centerTitle: true,
-      title: Text('Loans')),  
+      appBar: BaseAppBar(
+          title: Text('Loans'),
+          appBar: AppBar(),
+        ),
       drawer: MainDrawer(),
     );
   }

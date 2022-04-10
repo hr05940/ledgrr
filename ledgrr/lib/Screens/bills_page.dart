@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:ledgrr/Screens/appbar.dart';
 import 'package:ledgrr/Screens/menu.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 
 class BillsPage extends StatefulWidget {
   const BillsPage({ Key? key }) : super(key: key);
@@ -32,10 +32,10 @@ class _BillsState extends State<BillsPage> {
                 child: 
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(DateFormat.yMMMd().format(DateTime.now())),
-                    Text('Today'),
-                  ],
+                  // children: [
+                  //   Text(DateFormat.yMMMd().format(DateTime.now())),
+                  //   Text('Today'),
+                  // ],
                 )
               )
             ],

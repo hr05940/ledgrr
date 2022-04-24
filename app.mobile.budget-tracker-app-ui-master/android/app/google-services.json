@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643406650007",
+    "project_id": "ledgrr-b51bd",
+    "storage_bucket": "ledgrr-b51bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643406650007:android:b6a114bbfb3de75cab67d2",
+        "android_client_info": {
+          "package_name": "com.thebrokebunch.ledgrr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643406650007-gu97so801bj6dbc08co1h85l5jafvgjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtnPdn_Vy55akG9lz6OQiFvfZxCGHyIdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643406650007-gu97so801bj6dbc08co1h85l5jafvgjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

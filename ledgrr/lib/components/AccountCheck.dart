@@ -4,10 +4,12 @@ import 'package:ledgrr/constraints.dart';
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
   final Function press;
+  final StatelessWidget loc;
   const AlreadyHaveAnAccountCheck({
     Key? key,
     this.login = true,
     required this.press,
+    required this.loc,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,14 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            press;
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return loc;
+                },
+              ),
+            );
           },
           child: Text(
             login ? "Sign Up" : "Sign In",

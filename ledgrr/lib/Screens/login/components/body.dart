@@ -42,14 +42,14 @@ class Body extends StatelessWidget {
           SizedBox(height: size.height * 0.05),
           ElevatedButton(
             child: Text("LOGIN"),
-            style: ElevatedButton.styleFrom(shape: StadiumBorder(),
-            primary: kPrimaryColor),
+            style: ElevatedButton.styleFrom(
+                shape: StadiumBorder(), primary: kPrimaryColor),
             onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Dashboard()),
-            );
-          },
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Dashboard()),
+              );
+            },
             // press: () {
             //   Navigator.of(context).push(
             //       MaterialPageRoute(builder: (context) => const Dashboard()));
@@ -78,15 +78,16 @@ class Body extends StatelessWidget {
           ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
+            loc: SigninScreen(),
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return SigninScreen();
-                  },
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) {
+              //       return SigninScreen();
+              // },
+              // ),
+              // );
             },
           ),
         ],

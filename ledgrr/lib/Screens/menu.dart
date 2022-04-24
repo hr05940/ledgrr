@@ -6,8 +6,8 @@ import 'package:ledgrr/Screens/bills_page.dart';
 import 'package:ledgrr/Screens/loans_page.dart';
 import 'package:ledgrr/Screens/transactionhistory_page.dart';
 import 'package:ledgrr/Screens/savings_page.dart';
-
-class MainDrawer extends StatelessWidget{
+import 'package:ledgrr/Screens/login/login.dart';
+class MainDrawer extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
   @override
   Widget build(BuildContext context) {
@@ -94,7 +94,6 @@ class MainDrawer extends StatelessWidget{
         ),
       );
 
-
   Widget buildMenuItem({
     required String text,
     required IconData icon,
@@ -120,7 +119,7 @@ class MainDrawer extends StatelessWidget{
           builder: (context) => Dashboard(),
         ));
         break;
-    case 1:
+      case 1:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => TransactionHistoryPage(),
         ));
@@ -138,6 +137,11 @@ class MainDrawer extends StatelessWidget{
       case 4:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => SavingsPage(),
+        ));
+        break;
+      case 5:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => LoginScreen(),
         ));
         break;
     }

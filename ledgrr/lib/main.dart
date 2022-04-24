@@ -8,7 +8,6 @@ import 'package:ledgrr/components/size_config.dart';
 // import 'package:ledgrr/Screens/dashboard/dashboard.dart';
 import 'package:ledgrr/Screens/dashboard/dashboard1.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,24 +19,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'ledgrr',
-      // theme: ThemeData(
-      //     // primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white
-          
-      //     prim
-      //     // primaryColor: Color.fromRGBO(102, 85, 95, 1),
-      //     // cardColor: Color.fromRGBO(245, 224, 181, 1),
-          
-      //     textTheme: const TextTheme(
-      //       headline1: TextStyle(fontFamily: 'Open Sans EB', fontSize: 50),
-      //       bodyText1: TextStyle(fontFamily: 'Open Sans M', fontSize: 20)
-      //     )
-      //     ),
-      // drawer: MainDrawer(),
-      home: Dashboard(),
-      // home: SigninScreen()
-      // home: Dashboard(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'ledgrr',
+        // theme: ThemeData(
+        //     // primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white
+
+        //     prim
+        //     // primaryColor: Color.fromRGBO(102, 85, 95, 1),
+        //     // cardColor: Color.fromRGBO(245, 224, 181, 1),
+
+        //     textTheme: const TextTheme(
+        //       headline1: TextStyle(fontFamily: 'Open Sans EB', fontSize: 50),
+        //       bodyText1: TextStyle(fontFamily: 'Open Sans M', fontSize: 20)
+        //     )
+        //     ),
+        // drawer: MainDrawer(),
+        // home: Dashboard(),
+        home: LoginScreen()
+        // home: Dashboard(),
+        );
   }
 }

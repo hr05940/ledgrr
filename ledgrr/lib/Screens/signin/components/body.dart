@@ -4,10 +4,13 @@ import 'package:ledgrr/Screens/login/login.dart';
 import 'package:ledgrr/Screens/signin/components/background.dart';
 import 'package:ledgrr/Screens/signin/components/or_divider.dart';
 import 'package:ledgrr/Screens/signin/components/social_icon.dart';
+import 'package:ledgrr/Screens/signin/signin.dart';
 import 'package:ledgrr/components/AccountCheck.dart';
 import 'package:ledgrr/components/roundbutton.dart';
 import 'package:ledgrr/components/roundinputfield.dart';
 import 'package:ledgrr/components/roundpasswordfield.dart';
+import 'package:ledgrr/constraints.dart';
+import 'package:ledgrr/Screens/dashboard/dashboard.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -38,22 +41,33 @@ class Body extends StatelessWidget {
             onChanged: (value) {},
           ),
           SizedBox(height: size.height * 0.05),
-          RoundedButton(
-            text: "SIGNUP",
-            press: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return LoginScreen();
-              //     },
-              //   ),
-              // );
+          ElevatedButton(
+            child: Text("SIGNIN"),
+            style: ElevatedButton.styleFrom(
+                shape: StadiumBorder(), primary: kPrimaryColor),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Dashboard()),
+              );
             },
+            // press: () {
+            //   Navigator.of(context).push(
+            //       MaterialPageRoute(builder: (context) => const Dashboard()));
+            //   // Navigator.push(
+            //   //   context,
+            //   //   MaterialPageRoute(
+            //   //     builder: (context) {
+            //   //       return Dashboard();
+            //   //     },
+            //   //   ),
+            //   // );
+            // },
           ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
             login: false,
+            loc: LoginScreen(),
             press: () {
               // Navigator.push(
               //   context,

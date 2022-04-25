@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ledgrr/Screens/login/components/background.dart';
-import 'package:ledgrr/Screens/login/login.dart';
-import 'package:ledgrr/Screens/menu.dart';
-import 'package:ledgrr/Screens/signin/signin.dart';
-import 'package:ledgrr/constraints.dart';
-import 'package:ledgrr/components/size_config.dart';
+import 'package:ledgrr/Screens/navbar/navbar.dart';
+// import 'package:ledgrr/Screens/login/components/background.dart';
+// import 'package:ledgrr/Screens/login/login.dart';
+// import 'package:ledgrr/Screens/side_menu/menu.dart';
+// import 'package:ledgrr/Screens/signin/signin.dart';
+// import 'package:ledgrr/constraints.dart';
+// import 'package:ledgrr/components/size_config.dart';
 // import 'package:ledgrr/Screens/dashboard/dashboard.dart';
-import 'package:ledgrr/Screens/dashboard/dashboard1.dart';
+// import 'package:ledgrr/Screens/dashboard/dashboard1.dart';
+// import 'package:ledgrr/Screens/dashboard/dashboard2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,8 +37,9 @@ class MyApp extends StatelessWidget {
         //     ),
         // drawer: MainDrawer(),
         // home: Dashboard(),
-        home: LoginScreen()
+        // home: LoginScreen()
         // home: Dashboard(),
+        home: navbar(),
         );
   }
 }

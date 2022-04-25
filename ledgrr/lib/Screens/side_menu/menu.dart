@@ -2,13 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:ledgrr/Screens/dashboard/dashboard.dart';
-import 'package:ledgrr/Screens/bills_page.dart';
-import 'package:ledgrr/Screens/loans_page.dart';
-import 'package:ledgrr/Screens/transactionhistory_page.dart';
-import 'package:ledgrr/Screens/savings_page.dart';
+import 'bills_page.dart';
+import 'loans_page.dart';
+import 'transactionhistory_page.dart';
+import 'savings_page.dart';
 import 'package:ledgrr/Screens/login/login.dart';
 class MainDrawer extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
+
   @override
   Widget build(BuildContext context) {
     final name = 'Ash Ketchum';

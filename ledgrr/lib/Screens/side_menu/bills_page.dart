@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ledgrr/Screens/appbar.dart';
-import 'package:ledgrr/Screens/menu.dart';
+import 'appbar.dart';
+import 'menu.dart';
 // import 'package:intl/intl.dart';
 
 class BillsPage extends StatefulWidget {

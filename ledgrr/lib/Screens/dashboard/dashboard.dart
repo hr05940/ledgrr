@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
-import 'package:ledgrr/Screens/menu.dart';
-import 'package:ledgrr/Screens/appbar.dart';
+import 'package:ledgrr/Screens/side_menu/menu.dart';
+import 'package:ledgrr/Screens/side_menu/appbar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);

@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ledgrr/Screens/menu.dart';
-import 'package:ledgrr/Screens/appbar.dart';
+import 'menu.dart';
+import 'appbar.dart';
 
 class TransactionHistoryPage extends StatefulWidget {
   const TransactionHistoryPage({ Key? key }) : super(key: key);

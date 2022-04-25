@@ -1,16 +1,18 @@
-//New Attempt
 import 'package:flutter/material.dart';
-import 'package:ledgrr/Screens/dashboard/components/add_category_button.dart';
+// import 'package:ledgrr/Screens/dashboard/components/add_category_button.dart';
+// import 'package:ledgrr/Screens/dashboard/components/fakedata.dart';
+import 'package:ledgrr/json/fakedata.dart';
 import 'package:ledgrr/Screens/dashboard/components/topcards.dart';
+import 'package:ledgrr/Screens/dashboard/components/category_card.dart';
 import 'package:ledgrr/Screens/side_menu/menu.dart';
 import 'package:ledgrr/components/style.dart';
-
-import 'components/hero_route.dart';
+// import 'components/hero_route.dart';
 
 class Dashboard extends StatefulWidget {
+  const Dashboard({ Key? key }) : super(key: key);
 
   @override
-  _DashboardState createState() => _DashboardState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
@@ -45,29 +47,40 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
     screenWidth = size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
-
-      floatingActionButton: isCollapsed? addButton(context): null,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: isCollapsed? navbar(context): null,
-
+      backgroundColor: AppColors.backgroundColor,
       body: Stack(
         children: <Widget>[
-
           Container(
             height: size.height,
             decoration: BoxDecoration(image: DecorationImage(
-              alignment: Alignment.topRight,
-              image: AssetImage('assets/icons/header.png')
-            )),
+              image: AssetImage('assets/icons/header.png'),
+              alignment: Alignment.topRight)),
           ),
-          
           menu(context),
           dashboard(context),
         ],
       )
     );
   }
+
+  //navbar
+  // Widget navbar(context) {
+  //   return BottomAppBar(
+  //     color: AppColors.tertiaryColor,
+  //     shape: CircularNotchedRectangle(),
+  //     notchMargin: 5,
+  //     child: Row(
+  //       mainAxisSize: MainAxisSize.max,
+  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //       children: <Widget>[
+  //         IconButton(icon: Icon(Icons.home, color: AppColors.backgroundColor), onPressed: () {},),
+  //         IconButton(icon: Icon(Icons.bar_chart_rounded, color: AppColors.backgroundColor), onPressed: () {},),
+  //         IconButton(icon: Icon(Icons.account_balance_wallet, color: AppColors.backgroundColor), onPressed: () {},),
+  //         IconButton(icon: Icon(Icons.person, color: AppColors.backgroundColor), onPressed: () {},)
+  //       ],
+  //     )
+  //   );
+  // }
 
   Widget menu(context) {
     return SlideTransition(
@@ -87,7 +100,6 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
       left: isCollapsed ? 0: 0.6 * screenWidth,
       right: isCollapsed ? 0: -0.2 * screenWidth,
       child: ScaleTransition(
-
         scale: _scaleAnimation,
         child: Material(
           animationDuration: duration,
@@ -124,6 +136,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                   ),
 
                   SizedBox(height: 20,),
+
                   Container(
                     height: 128,
                     width: screenWidth,
@@ -137,45 +150,21 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                       ],
                     )
                   ),
+                  
+                  SizedBox(height: 32,),
+
+                  //grid
+                  Container(
+                    child: CategoryContent(categories: fakeData)
+                  )
+
                 ],
               )
-            ),
-          )
-        ),
-      
-      ),
+            )
+          ),
+
+        )
+      )
     );
-  }
-
-  Widget addButton(context) {
-    return FloatingActionButton(
-        onPressed: () {
-          //code to execute on button press
-          // Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddCategoryPopupCard()));
-        },
-        backgroundColor: Color.fromRGBO(102, 85, 95, 1),
-        child: Icon(Icons.add),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        );
-  }
-
-  Widget navbar(context) {
-
-    return BottomAppBar (
-      color: AppColors.tertiaryColor,
-      shape: CircularNotchedRectangle(),
-      notchMargin: 5,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(icon: Icon(Icons.home, color: Colors.white,), onPressed: () {},),
-          IconButton(icon: Icon(Icons.bar_chart_rounded, color: Colors.white,), onPressed: () {},),
-          IconButton(icon: Icon(Icons.account_balance_wallet, color: Colors.white,), onPressed: () {},),
-          IconButton(icon: Icon(Icons.person, color: Colors.white,), onPressed: () {},),
-          ],
-        ),
-      );
-    
   }
 }

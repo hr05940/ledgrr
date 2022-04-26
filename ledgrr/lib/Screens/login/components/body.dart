@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "Welcome",
+            "Welcome to LedGrr!",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Open Sans M',
@@ -31,6 +31,7 @@ class Body extends StatelessWidget {
             "assets/icons/login.svg",
             height: size.height * 0.2,
           ),
+          <com.google.android.gms.common.SignInButton>
           SizedBox(height: size.height * 0.03),
           RoundedInputField(
             hintText: "Your Email",

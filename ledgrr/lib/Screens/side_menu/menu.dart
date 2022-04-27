@@ -1,18 +1,21 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:ledgrr/Screens/dashboard/dashboard.dart';
+import 'package:ledgrr/Screens/dashboard/dashboard2.dart';
 import 'bills_page.dart';
 import 'loans_page.dart';
 import 'transactionhistory_page.dart';
 import 'savings_page.dart';
 import 'package:ledgrr/Screens/login/login.dart';
+import 'package:ledgrr/services/auth.dart';
+
 class MainDrawer extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
 
   @override
   Widget build(BuildContext context) {
     final name = 'Ash Ketchum';
+    final AuthService _auth = AuthService();
 
     return Drawer(
       child: Material(
@@ -60,7 +63,10 @@ class MainDrawer extends StatelessWidget {
                   buildMenuItem(
                     text: 'Sign Out',
                     icon: Icons.logout,
-                    onClicked: () => selectedItem(context, 5),
+                    // onClicked: () => selectedItem(context, 5),
+                    onClicked: () async {
+                      await _auth.signOut();
+                    }
                   ),
                 ],
               ),
@@ -140,11 +146,12 @@ class MainDrawer extends StatelessWidget {
           builder: (context) => SavingsPage(),
         ));
         break;
-      case 5:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => LoginScreen(),
-        ));
-        break;
+      // case 5:
+        // Navigator.of(context).push(MaterialPageRoute(
+        //   builder: (context) => LoginScreen(),
+        
+        // ));
+        // break;
     }
   }
 }

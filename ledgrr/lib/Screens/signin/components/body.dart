@@ -10,7 +10,7 @@ import 'package:ledgrr/components/roundbutton.dart';
 import 'package:ledgrr/components/roundinputfield.dart';
 import 'package:ledgrr/components/roundpasswordfield.dart';
 import 'package:ledgrr/constraints.dart';
-import 'package:ledgrr/Screens/dashboard/dashboard.dart';
+import 'package:ledgrr/Screens/dashboard/dashboard2.dart';
 
 class Body extends StatelessWidget {
   @override

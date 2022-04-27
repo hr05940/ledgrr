@@ -26,6 +26,20 @@ class Category {
   // final List<Item> items;
 }
 
+class Expenses {
+  const Expenses({
+    required this.category,
+    required this.amount,
+    required this.time,
+    required this.date,
+  });
+
+  final String category;
+  final double amount;
+  final String time;
+  final String date;
+}
+
 /// {@template item}
 /// An individual item model, used within a [Todo].
 /// {@endtemplate}

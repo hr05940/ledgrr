@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ledgrr/Screens/dashboard/dashboard.dart';
+import 'package:ledgrr/Screens/dashboard/dashboard2.dart';
 import 'package:ledgrr/Screens/login/components/background.dart';
 import 'package:ledgrr/Screens/login/login.dart';
 import 'package:ledgrr/Screens/signin/signin.dart';
@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
             "assets/icons/login.svg",
             height: size.height * 0.2,
           ),
-          <com.google.android.gms.common.SignInButton>
+          // <com.google.android.gms.common.SignInButton>,
           SizedBox(height: size.height * 0.03),
           RoundedInputField(
             hintText: "Your Email",

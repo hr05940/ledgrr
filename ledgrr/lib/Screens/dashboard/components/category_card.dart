@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:ledgrr/Screens/expense_log/expense_log.dart';
+// import 'package:ledgrr/Screens/side_menu/transactionhistory_page.dart';
 import 'package:ledgrr/components/style.dart';
 import 'hero_route.dart';
 // import 'number_inc_dec.dart';
@@ -12,9 +13,11 @@ class CategoryContent extends StatelessWidget {
   const CategoryContent({
     Key? key,
     required this.categories,
+    required this.enablecard,
   }) : super(key: key);
 
   final List<Category> categories;
+  final bool enablecard;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class CategoryContent extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       itemBuilder: (context, index) {
         final _category = categories[index];
-        return _CategoryCard(category: _category);
+        return _CategoryCard(category: _category, enablecard: enablecard,);
       }, gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
                 childAspectRatio: 3 / 2,
@@ -39,21 +42,25 @@ class _CategoryCard extends StatelessWidget {
   const _CategoryCard({
     Key? key,
     required this.category,
+    required this.enablecard,
   }) : super(key: key);
 
   final Category category;
+  final bool enablecard;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
-          HeroDialogRoute(
-            builder: (context) => Center(
-              child: _CategoryPopupCard(category: category),
+        if (enablecard) {
+          Navigator.of(context).push(
+            HeroDialogRoute(
+              builder: (context) => Center(
+                child: _CategoryPopupCard(category: category),
+              ),
             ),
-          ),
-        );
+          );
+        }
       },
       child: Hero(
         // createRectTween: (begin, end) {
@@ -120,6 +127,7 @@ class _CategoryAmount extends StatelessWidget {
         controller: TextEditingController(),
         buttonArrangement: ButtonArrangement.incRightDecLeft,
         min: 0,
+        autovalidateMode: AutovalidateMode.disabled,
         // max: 3,
         incDecFactor: 50,
         decIcon: Icons.arrow_left_outlined,
@@ -177,7 +185,11 @@ class _CategoryPopupCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: <Widget>[
-                  ExpenseLog(),
+                  // ExpenseLog(),
+                  Expanded(
+                    child: ExpenseLog()
+                  ),
+                  // TransactionHistoryPage(),
                   // _CategoryTitle(title: category.name),
                   const SizedBox(
                     height: 8,

@@ -18,6 +18,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
 
   bool isCollapsed = true;
+  bool category_cards = true;
   late double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 300);
   late AnimationController _controller;
@@ -121,10 +122,14 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                         child: Icon(Icons.menu, color: Colors.white),
                         onTap: () {
                           setState(() {
-                            if (isCollapsed)
+                            if (isCollapsed){
                               _controller.forward();
-                            else
+                              category_cards = false;
+                            }
+                            else{
                               _controller.reverse();
+                              category_cards = true;
+                            }
                             
                             isCollapsed = !isCollapsed;
                           });
@@ -155,7 +160,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
 
                   //grid
                   Container(
-                    child: CategoryContent(categories: fakeData)
+                    child: CategoryContent(categories: fakeData, enablecard: category_cards)
                   )
 
                 ],

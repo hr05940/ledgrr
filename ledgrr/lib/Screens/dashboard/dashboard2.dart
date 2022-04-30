@@ -88,7 +88,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
       position: _slideAnimation,
       child: ScaleTransition(
         scale: _menuScaleAnimation,
-        child: MainDrawer(),
+        // child: MainDrawer(),
       )
     );
   }
@@ -142,26 +142,26 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
 
                   SizedBox(height: 20,),
 
-                  Container(
-                    height: 128,
-                    width: screenWidth,
-                    child: PageView(
-                      controller: PageController(viewportFraction: 0.8),
-                      scrollDirection: Axis.horizontal,
-                      pageSnapping: true,
-                      children: <Widget>[
-                        TopCard_Amount(),
-                        TopCard_Date()
-                      ],
-                    )
-                  ),
+                  // Container(
+                  //   height: 128,
+                  //   width: screenWidth,
+                  //   child: PageView(
+                  //     controller: PageController(viewportFraction: 0.8),
+                  //     scrollDirection: Axis.horizontal,
+                  //     pageSnapping: true,
+                  //     children: <Widget>[
+                  //       TopCard_Amount(),
+                  //       TopCard_Date()
+                  //     ],
+                  //   )
+                  // ),
                   
                   SizedBox(height: 32,),
 
-                  //grid
-                  Container(
-                    child: CategoryContent(categories: fakeData, enablecard: category_cards)
-                  )
+                  // //grid
+                  // Container(
+                  //   child: CategoryContent(categories: fakeData, enablecard: category_cards)
+                  // )
 
                 ],
               )
